@@ -458,3 +458,6 @@ dw_php_codehinting.config
 
 django-debug-server/*db*
 django-debug-server/my_db*
+
+/django_crud/notebook/migrations/
+/django_crud/user/migrations/

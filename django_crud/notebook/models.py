@@ -16,6 +16,5 @@ class Notebook(models.Model):
     updated_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'notebook'
         unique_together = (('id', 'draft_user'),)
