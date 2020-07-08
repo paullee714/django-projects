@@ -455,3 +455,5 @@ dw_php_codehinting.config
 .idea/modules.xml
 .idea/vcs.xml
 .DS_Store
+
+django-debug-server/my_db/*
