@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+    db:
+        restart: always
+        image: mysql
+        command: mysqld --default-authentication-plugin=mysql_native_password
+        volumes:
+            - ./my_db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: "qwerqwer123"
+            MYSQL_DATABASE: "django_test"
+            MYSQL_USER: "wool"
+            MYSQL_PASSWORD: "qwerqwer123"
+
+    web:
+        restart: always
+        build:
+            context: .
+            dockerfile: django.Dockerfile
+        environment:
+            - DJANGO_DEBUG=True
+            - DJANGO_DB_HOST=db
+            - DJANGO_DB_PORT=3306
+            - DJANGO_DB_NAME=django_test
+            - DJANGO_DB_USERNAME=root
+            - DJANGO_DB_PASSWORD=qwerqwer123
+        ports:
+            - "8000:8000"
+        command: python3 manage.py runserver 0:8000
+        volumes:
+            - .:/app
+        depends_on:
+          - db
