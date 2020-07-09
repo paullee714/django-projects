@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+
+        <form action="/note/create/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="note_data_help">지금 무슨 생각을 하고있나요 ?? </label>
+                <input type="text" class="form-control" id="note_data" name ="note_data" aria-describedby="note_data_help">
+                <small id="note_data_help" class="form-text text-muted">지금 무슨 생각을 하고있는지 얘기 해 주세요!</small>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary">작성하기</button>
+        </form>
+
+    </div>
+</div>

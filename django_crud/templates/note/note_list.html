@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <hr>
+    {% if notes %}
+        {% for note in notes %}
+            <div class="card mb-2">
+                <div class="card-header">
+                    {{ note.draft_user }}
+                    <a href="{% url 'update' note.id %}">수정</a>
+                    <a href="{% url 'delete' note.id %}">삭제</a>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        {{ note.note_data }}
+
+                        <footer class="blockquote-footer">last updated at {{ note.updated_at | timesince }} ago by  {{ note.draft_user }}</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
