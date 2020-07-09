@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter
 # Register your models here.
 from .models import Notebook
 
@@ -14,4 +14,4 @@ class NotebookAdmin(admin.ModelAdmin):
     ]
 
     list_display_links = ['id','note_data','draft_user']
-    list_filter = ['draft_user','created_at','updated_at']
+    list_filter = ['draft_user',('created_at',DateRangeFilter),('updated_at',DateRangeFilter)]
