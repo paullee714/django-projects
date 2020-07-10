@@ -14,6 +14,6 @@ $ source venv/bin/actiavte
 ├── README.md
 ├── django-debug-server --> django서버를 Docker로작성, DEBUG 모드가 실현 될 수 있도록 수정
 ├── django-CRUD -->  Django Admin 설정 / Django CRUD 작업
+├── django_file_upload --> Django File Upload 기능 작업 
 └── requirements.txt
 ```
-
