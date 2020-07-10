@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+    <a href="{% url 'home' %}"> home!</a>
+<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    <label for="title">Title</label><input type="text" id="title" name="title" placeholder="title"/>
+    <label for="post">Post</label><input type="text" id="post" name="post" placeholder="post"/>
+    <input type="file" id="file" name="file">
+    <button type="submit"> 업로드 </button>
+</form>
+{% endblock %}
